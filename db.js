@@ -1,11 +1,11 @@
 const { Client } = require('pg');
 
 const client = new Client({
-    host: process.env.DB_HOST,
-    port: process.env.DB_PORT,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
+    host: dpg-d39tkk7fte5s73arqnn0-a,
+    port: 5432,
+    user: schedule_db_2owc_user,
+    password: ezR5BBU6F5Rwl5H9FZVDwqo8nBHzLuW8,
+    database: schedule_db_2owc,
     ssl: { rejectUnauthorized: false } // Render 배포용
 });
 
