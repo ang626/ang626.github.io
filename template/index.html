@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>일정 관리</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>일정 관리</h1>
+
+    <form id="scheduleForm">
+        <input type="text" id="title" placeholder="제목" required>
+        <input type="date" id="date" required>
+        <textarea id="memo" placeholder="메모"></textarea>
+        <button type="submit">등록</button>
+    </form>
+
+    <h2>등록된 일정</h2>
+    <ul id="scheduleList"></ul>
+
+    <script src="/script.js"></script>
+</body>
+</html>

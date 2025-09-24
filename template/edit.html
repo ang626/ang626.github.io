@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>일정 수정</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>일정 수정</h1>
+
+    <form id="editForm">
+        <input type="text" id="title" placeholder="제목" required>
+        <input type="date" id="date" required>
+        <textarea id="memo" placeholder="메모"></textarea>
+        <button type="submit">저장</button>
+    </form>
+
+    <script>
+        const id = window.location.pathname.split('/').pop();
+
+        // 기존 일정 데이터 불러오기
+        fetch(`/api/schedules`)
+            .then(res => res.json())
+            .then(data => {
+                const schedule = data.find(s => s.id == id);
+                if (!schedule) return alert('일정을 찾을 수 없습니다.');
+                document.getElementById('title').value = schedule.title;
+                document.getElementById('memo').value = schedule.memo;
+                document.getElementById('date').value = schedule.date;
+            });
+
+        document.getElementById('editForm').addEventListener('submit', async e => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const memo = document.getElementById('memo').value;
+            const date = document.getElementById('date').value;
+
+            await fetch(`/api/schedules/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, memo, date })
+            });
+
+            // 수정 후 목록 페이지로 이동
+            window.location.href = '/';
+        });
+    </script>
+</body>
+</html>
