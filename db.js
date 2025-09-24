@@ -1,7 +1,7 @@
 const { Client } = require('pg');
 
 // MariaDB 연결
-const client = mysql.createConnection({
+const client = new Client({
     host: process.env.DB_HOST,
     port: process.env.DB_PORT,
     user: process.env.DB_USER,
