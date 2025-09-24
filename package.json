@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@netlify/functions": "^4.2.6",
     "body-parser": "^2.2.0",
     "express": "^5.1.0",
-    "mysql2": "^3.15.0"
+    "mysql2": "^3.15.0",
+    "pg": "^8.16.3"
   }
 }
