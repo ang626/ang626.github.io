@@ -9,6 +9,7 @@ const client = new Client({
     ssl: { rejectUnauthorized: false } // Render 배포용
 });
 
+
 client.connect()
   .then(() => console.log("✅ PostgreSQL Connected!"))
   .catch(err => console.error("❌ Connection error", err.stack));

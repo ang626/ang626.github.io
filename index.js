@@ -39,6 +39,7 @@ app.post('/api/schedules', async (req, res) => {
     }
 });
 
+
 // 수정 페이지 렌더링
 app.get('/edit/:id', (req, res) => {
     res.sendFile(path.join(__dirname, 'template', 'edit.html'));

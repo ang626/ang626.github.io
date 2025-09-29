@@ -23,6 +23,7 @@ async function loadSchedules() {
     });
 }
 
+
 document.getElementById('scheduleForm').addEventListener('submit', async e => {
     e.preventDefault();
     const title = document.getElementById('title').value;
